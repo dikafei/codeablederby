@@ -898,11 +898,6 @@
             raceMusic.currentTime = 0;
             raceMusic.play().catch(e => console.log("Music play failed:", e));
             
-            // Update music indicator
-            const musicIndicator = document.getElementById('musicIndicator');
-            musicIndicator.innerHTML = '<span>🎵</span> Sai-Ma Anthem Playing!';
-            musicIndicator.classList.add('playing');
-            
             // Show starting message
             document.getElementById('commentary').textContent = 
                 "🎺 LADIES AND GENTLEMEN! START YOUR ENGINES! THE 1-MINUTE SHOWDOWN BEGINS! 🚀";
@@ -924,9 +919,6 @@
             // Stop the music immediately
             raceMusic.pause();
             raceMusic.currentTime = 0;
-            
-            document.getElementById('musicIndicator').classList.remove('playing');
-            document.getElementById('musicIndicator').innerHTML = '<span>🎵</span> Race Complete!';
             
             // Crown the winner
             document.getElementById('progressBar2').classList.add('winner-pulse');
@@ -998,8 +990,6 @@
             // Stop music
             raceMusic.pause();
             raceMusic.currentTime = 0;
-            document.getElementById('musicIndicator').classList.remove('playing');
-            document.getElementById('musicIndicator').innerHTML = '<span>🎵</span> Race Anthem Ready';
             
             // Reset all variables
             currentTime = 0;
