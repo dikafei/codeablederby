@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><title>Codeable Sales Derby 🏇</title><meta name="viewport" content="width=device-width,initial-scale=1.0"><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:linear-gradient(180deg,#0a1f3a 0%,#152a57 100%);min-height:100vh;color:#fff;padding:20px;display:flex;justify-content:center;align-items:center;overflow-x:hidden;position:relative}body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:radial-gradient(circle at 10% 20%,rgba(30,144,255,0.1) 0%,transparent 20%),radial-gradient(circle at 90% 80%,rgba(50,205,50,0.1) 0%,transparent 20%),radial-gradient(circle at 50% 50%,rgba(255,215,0,0.05) 0%,transparent 30%);pointer-events:none;z-index:-2}.race-container{max-width:1200px;width:100%;background:rgba(0,15,30,0.9);border-radius:25px;padding:25px;box-shadow:0 20px 80px rgba(0,0,0,0.7),0 0 0 1px rgba(255,215,0,0.1);border:2px solid rgba(255,215,0,0.2);position:relative}.race-container::after{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#FFD700,#FF8C00,#4CAF50,#2196F3,#FFD700);z-index:1}.race-header{text-align:center;margin-bottom:20px}.race-title{font-size:2.8em;background:linear-gradient(45deg,#FFD700,#FF8C00,#4CAF50,#2196F3);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:5px;text-shadow:0 0 30px rgba(255,215,0,0.3);animation:titleGlow 3s ease-in-out infinite alternate}@keyframes titleGlow{0%{text-shadow:0 0 20px rgba(255,215,0,0.3),0 0 40px rgba(255,140,0,0.2)}100%{text-shadow:0 0 30px rgba(255,215,0,0.5),0 0 60px rgba(255,140,0,0.3),0 0 80px rgba(76,175,80,0.2)}}.race-subtitle{font-size:1.2em;color:#a0c8ff;font-style:italic}.race-timer{position:absolute;top:20px;right:20px;background:rgba(0,0,0,0.7);padding:10px 15px;border-radius:15px;font-family:'Courier New',monospace;font-size:1.3em;font-weight:bold;color:#FFD700;border:2px solid rgba(255,215,0,0.3);box-shadow:0 5px 25px rgba(0,0,0,0.5)}.start-popup{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.95);display:flex;justify-content:center;align-items:center;z-index:1000;backdrop-filter:blur(10px)}.popup-content{background:linear-gradient(135deg,rgba(0,20,40,0.95),rgba(10,30,60,0.95));padding:40px;border-radius:25px;text-align:center;max-width:500px;border:3px solid rgba(255,215,0,0.3);box-shadow:0 20px 60px rgba(0,0,0,0.8);animation:popupEntrance 0.8s cubic-bezier(0.34,1.56,0.64,1)}@keyframes popupEntrance{0%{transform:scale(0.5) translateY(50px);opacity:0}100%{transform:scale(1) translateY(0);opacity:1}}.popup-title{font-size:2em;background:linear-gradient(45deg,#FFD700,#FF8C00);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:15px}.popup-subtitle{font-size:1.2em;color:#a0c8ff;margin-bottom:25px;line-height:1.5}.popup-btn{padding:18px 45px;font-size:1.4em;font-weight:bold;background:linear-gradient(45deg,#FFD700,#FF8C00);border:none;border-radius:15px;color:#000;cursor:pointer;transition:all 0.3s ease;display:flex;align-items:center;gap:12px;margin:0 auto;box-shadow:0 15px 40px rgba(255,140,0,0.4)}.popup-btn:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(255,140,0,0.6)}.popup-btn:active{transform:translateY(-2px)}.track-container{position:relative;width:1000px;height:450px;margin:0 auto 10px;background:linear-gradient(to bottom,#1a4f1a,#0a3d0a);border-radius:10px;overflow:hidden;border:4px solid #8B4513}.track-lanes{position:absolute;top:50%;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent 0%,#fff 50%,transparent 100%);transform:translateY(-50%)}.lane{position:absolute;width:100%;height:60px;border-top:2px dashed rgba(255,255,255,0.3);border-bottom:2px dashed rgba(255,255,255,0.3)}.lane:nth-child(1){top:12%}.lane:nth-child(2){top:24%}.lane:nth-child(3){top:36%}.lane:nth-child(4){top:48%}.lane:nth-child(5){top:60%}.lane:nth-child(6){top:72%}.lane:nth-child(7){top:84%}.finish-line{position:absolute;right:100px;top:0;bottom:0;width:8px;background:repeating-linear-gradient(180deg,#000,#000 10px,#FFD700 10px,#FFD700 20px);z-index:5;box-shadow:0 0 30px #FFD700,inset 0 0 20px rgba(255,215,0,0.5)}.racer-avatar{position:absolute;width:50px;height:50px;border-radius:50%;border:3px solid;background-size:cover;background-position:center;transform-origin:center;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 8px 25px rgba(0,0,0,0.7),0 0 0 3px rgba(255,255,255,0.1);z-index:10}.racer-name-tag{position:absolute;top:-30px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.9);padding:4px 12px;border-radius:12px;font-weight:bold;font-size:0.85em;white-space:nowrap;border:2px solid currentColor;box-shadow:0 4px 15px rgba(0,0,0,0.5);z-index:11}.commentary-box{background:rgba(0,0,0,0.7);border-radius:15px;padding:15px;margin:10px 0 20px 0;border:2px solid rgba(255,215,0,0.3);position:relative;min-height:70px}.commentary-box::before{content:'📢 RACE COMMENTARY';position:absolute;top:-12px;left:20px;background:linear-gradient(45deg,#FFD700,#FF8C00);padding:4px 15px;border-radius:12px;font-size:0.8em;font-weight:bold;color:#000}.commentary-text{font-size:1.2em;line-height:1.3;min-height:40px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:500;padding:5px}.progress-container{background:rgba(0,20,40,0.7);border-radius:15px;padding:15px;margin-bottom:15px;border:1px solid rgba(255,255,255,0.1);box-shadow:inset 0 0 30px rgba(0,0,0,0.3);max-height:280px;overflow-y:auto}.progress-container::-webkit-scrollbar{width:6px}.progress-container::-webkit-scrollbar-track{background:rgba(255,255,255,0.05);border-radius:3px}.progress-container::-webkit-scrollbar-thumb{background:linear-gradient(45deg,#FFD700,#FF8C00);border-radius:3px}.racer-progress{height:50px;margin:8px 0;display:flex;align-items:center;background:rgba(255,255,255,0.05);border-radius:10px;padding:0 15px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.1)}.racer-progress.winner-pulse{animation:winnerPulse 2s infinite}@keyframes winnerPulse{0%{box-shadow:0 0 0 0 rgba(255,215,0,0.3)}70%{box-shadow:0 0 0 20px rgba(255,215,0,0)}100%{box-shadow:0 0 0 0 rgba(255,215,0,0)}}.racer-icon{font-size:1.6em;margin-right:12px;filter:drop-shadow(0 3px 6px rgba(0,0,0,0.5));animation:bounce 0.5s infinite alternate}@keyframes bounce{0%{transform:translateY(0)}100%{transform:translateY(-4px)}}.racer-label{font-weight:bold;font-size:1em;min-width:130px;margin-right:15px}.progress-bar{flex:1;height:18px;background:rgba(255,255,255,0.08);border-radius:9px;overflow:hidden;margin-right:15px;box-shadow:inset 0 3px 10px rgba(0,0,0,0.5)}.progress-fill{height:100%;border-radius:9px;width:0%;transition:width 0.3s ease-out;position:relative;overflow:hidden}.progress-fill::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2) 50%,transparent);animation:shimmer 1.5s infinite}@keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}.racer-score{font-size:1.1em;font-weight:bold;min-width:90px;text-align:right;color:#FFD700;text-shadow:0 2px 8px rgba(255,215,0,0.3)}.race-info{display:flex;justify-content:space-around;margin-top:15px;padding:12px;background:rgba(255,255,255,0.05);border-radius:12px;border:1px solid rgba(255,255,255,0.1);font-size:0.85em;color:#a0c8ff}.boost-effect{position:absolute;width:80px;height:80px;background:radial-gradient(circle,rgba(255,215,0,0.8),transparent 70%);border-radius:50%;pointer-events:none;z-index:20;opacity:0}.flash-effect{position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at center,rgba(255,215,0,0.4),transparent 70%);pointer-events:none;z-index:15;animation:flash 0.5s ease-out forwards}@keyframes flash{0%{opacity:1}100%{opacity:0}}.explosion{position:absolute;width:150px;height:150px;background:radial-gradient(circle,rgba(255,100,0,0.8),rgba(255,215,0,0.6) 30%,transparent 70%);border-radius:50%;pointer-events:none;z-index:25;animation:explode 0.8s ease-out forwards}@keyframes explode{0%{transform:scale(0);opacity:1}100%{transform:scale(2);opacity:0}}.smoke{position:absolute;width:120px;height:120px;background:radial-gradient(circle,rgba(200,200,200,0.3),rgba(150,150,150,0.2) 40%,transparent 70%);border-radius:50%;pointer-events:none;z-index:5;animation:smokeRise 2s ease-out forwards}@keyframes smokeRise{0%{transform:scale(0.5) translateY(0);opacity:0.7}100%{transform:scale(1.5) translateY(-80px);opacity:0}}.finish-line{position:absolute;right:100px;top:0;bottom:0;width:8px;background:repeating-linear-gradient(180deg,#000,#000 10px,#FFD700 10px,#FFD700 20px);z-index:5;box-shadow:0 0 30px #FFD700,inset 0 0 20px rgba(255,215,0,0.5)}</style></head><body><div class="start-popup" id="startPopup"><div class="popup-content"><h1 class="popup-title">🏇 CODEABLE SALES DERBY 🏇</h1><p class="popup-subtitle">Watch the epic retainer race unfold!<br>Don't forget to turn on your sound and feel the HEAT.</p><button class="popup-btn" onclick="startRace()"><span>🏁</span> START RACE!</button></div></div><div class="race-container" id="raceContainer" style="display:none"><div class="race-timer" id="raceTimer">00:05</div><div class="race-header"><h1 class="race-title">🏇 CODEABLE SALES DERBY 🏇</h1><p class="race-subtitle">The Great Retainer Race</p></div><div class="track-container"><div class="finish-line"></div><div class="track-lanes"></div><div class="lane"></div><div class="lane"></div><div class="lane"></div><div class="lane"></div><div class="lane"></div><div class="lane"></div><div class="lane"></div></div><div class="commentary-box"><div class="commentary-text" id="commentary">Get ready! Race starts in 5 seconds... ⏱️</div></div><div class="progress-container" id="progressContainer"></div><div class="race-info"><div>🎯 7 Competitors</div><div>⏱️ Complete Race</div><div>🏆 Epic Finish</div></div></div><audio id="raceMusic" preload="auto" loop><source src="https://jellypixelstudio.com/wp-content/uploads/2026/02/sai-ma.mp3" type="audio/mpeg"></audio><script>
-const RACE_CONFIG={totalTime:145,startDelay:5,racers:[
+const RACE_CONFIG={totalTime:120,startDelay:5,racers:[
 {name:"@Lorand Tar",score:1366,color:"#FF6B6B",avatarId:"avatar1",progressId:"fill1",icon:"🚀",avatar:"https://www.codeable.io/wp-content-new/uploads/2025/03/6548-large_6e42d06bf8cdada110a6e1b7f86b53c7-240x240.jpeg"},
 {name:"@zeshanshani",score:1960,color:"#4CAF50",avatarId:"avatar2",progressId:"fill2",icon:"🐎",avatar:"https://www.codeable.io/wp-content-new/uploads/2025/03/6687-large_f5ebd107fd4fa05a27e96dda8a21713b-240x240.jpeg"},
 {name:"@Marcel",score:2033,color:"#2196F3",avatarId:"avatar3",progressId:"fill3",icon:"💎",avatar:"https://storage.googleapis.com/avatars-production.codeable.io/22877/large_12cb1a5b446edf8906801156245b0456.jpeg"},
@@ -23,9 +23,7 @@ const RACE_COMMENTARY=[
 {time:108,message:"💎 @Marcel takes the lead! Enterprise power surging! 🚀"},
 {time:115,message:"🔥 @zeshanshani fighting back! Epic duel continues! ⚔️"},
 {time:125,message:"🎪 FINAL STRETCH! Everyone pushing hard! 🎉"},
-{time:135,message:"🏁 @Marcel crosses first! 🥇 @zeshanshani second! 🥈"},
-{time:140,message:"👏 More finishers crossing! Race almost complete! ✨"},
-{time:145,message:"🏆 RACE COMPLETE! All 7 competitors finished! 🎊"}
+{time:135,message:"🏁 @Marcel crosses first! 🥇 @zeshanshani second! 🥈"}
 ];
 let raceInterval,currentTime=0,raceActive=false,finishedRacers=0;
 const raceMusic=document.getElementById('raceMusic');
@@ -34,18 +32,155 @@ const trackContainer=document.querySelector('.track-container');
 let progress=Array(RACE_CONFIG.racers.length).fill(0);
 let hasFinished=Array(RACE_CONFIG.racers.length).fill(false);
 let commentaryIndex=0;
+
+// Each racer's base speed and current speed multiplier
+let racerBaseSpeed = 0.6; // Everyone starts with same base speed
+let racerSpeedMultipliers = Array(RACE_CONFIG.racers.length).fill(1.0);
+
+// Define which racer gets speed boosts at which commentary times
+// UPDATED: Josh Morley gets stronger/longer boost to stay right behind Lorand Tar
+const SPEED_BOOSTS = [
+    { time: 12, racerIndex: 0, multiplier: 1.8, duration: 8 },  // Lorand Tar early lead
+    { time: 20, racerIndex: 1, multiplier: 2.0, duration: 10 }, // zeshanshani volume power
+    { time: 30, racerIndex: 2, multiplier: 2.2, duration: 15 }, // Marcel enterprise momentum
+    { time: 42, racerIndex: 3, multiplier: 1.9, duration: 12 }, // Alex Smirnov multiple wins
+    { time: 55, racerIndex: 4, multiplier: 1.7, duration: 8 },  // Nathan Roberts big moves
+    { time: 68, racerIndex: 5, multiplier: 2.0, duration: 15 }, // Josh Morley - STRONGER BOOST to stay with Lorand
+    { time: 82, racerIndex: 6, multiplier: 1.6, duration: 8 },  // laszlo.kosa rhythm
+    { time: 108, racerIndex: 2, multiplier: 2.5, duration: 10 }, // Marcel final surge
+    { time: 115, racerIndex: 1, multiplier: 2.3, duration: 8 },  // zeshanshani final push
+    { time: 125, racerIndex: 3, multiplier: 2.1, duration: 8 },  // Alex final push
+    { time: 125, racerIndex: 5, multiplier: 1.8, duration: 10 }, // Josh Morley final push
+];
+
+// Track active speed boosts
+let activeBoosts = [];
+
 window.addEventListener('DOMContentLoaded',()=>{createRacerElements();document.getElementById('raceTimer').textContent='00:05';raceMusic.load();console.log("🏇 Race loaded!")});
 function createRacerElements(){progressContainer.innerHTML='';document.querySelectorAll('.racer-avatar').forEach(a=>a.remove());RACE_CONFIG.racers.forEach((r,i)=>{const a=document.createElement('div');a.className='racer-avatar';a.id=r.avatarId;a.style.borderColor=r.color;a.style.backgroundImage=`url('${r.avatar}')`;a.style.left='50px';a.style.top=`${12+i*12}%`;const n=document.createElement('div');n.className='racer-name-tag';n.textContent=r.name;n.style.color=r.color;a.appendChild(n);trackContainer.appendChild(a);const p=document.createElement('div');p.className='racer-progress';p.id=`progressBar${i+1}`;p.innerHTML=`<div class="racer-icon">${r.icon}</div><div class="racer-label">${r.name}</div><div class="progress-bar"><div class="progress-fill" id="${r.progressId}" style="background:linear-gradient(90deg,${r.color},${lightenColor(r.color,40)})"></div></div><div class="racer-score" id="score${i+1}">${r.score.toLocaleString()} pts</div>`;progressContainer.appendChild(p)})}
-function updateRacePositions(){RACE_CONFIG.racers.forEach((r,i)=>{const a=document.getElementById(r.avatarId);if(a){const distance=progress[i]*9;a.style.left=`${50+distance}px`;if(progress[i]>=100&&!hasFinished[i]){hasFinished[i]=true;finishedRacers++;a.style.boxShadow='0 0 0 3px gold, 0 0 20px gold';if(finishedRacers===1){createExplosionEffect(950,parseInt(a.style.top));document.getElementById('commentary').textContent=`🏁 ${r.name} crosses first! 🥇`;}else if(finishedRacers===2){document.getElementById('commentary').textContent=`🥈 Second place! Race continues...`;}else if(finishedRacers===RACE_CONFIG.racers.length){finishRace();}}}})}
-function calculateRaceProgress(elapsedTime){RACE_CONFIG.racers.forEach((r,i)=>{if(progress[i]<100){let inc=0;if(elapsedTime<25){if(i<2)inc=1.0;else inc=0.5}else if(elapsedTime<70){if(i===2||i===3)inc=1.2;else if(i<2)inc=0.7;else inc=0.8}else if(elapsedTime<120){if(i===2)inc=2.0;else if(i===5)inc=1.5;else inc=0.5}else{if(i===2)inc=1.8;else inc=1.2}progress[i]=Math.min(progress[i]+inc,100);document.getElementById(r.progressId).style.width=`${progress[i]}%`}});updateRacePositions();checkDramaticMoments(elapsedTime);if(elapsedTime>40&&elapsedTime%12==0)createEffect(Math.random()*900+50,Math.random()*400+50)}
-function checkDramaticMoments(elapsedTime){if(commentaryIndex<RACE_COMMENTARY.length-1){const n=RACE_COMMENTARY[commentaryIndex+1];if(elapsedTime>=n.time){commentaryIndex++;document.getElementById('commentary').textContent=n.message;if(n.message.includes('ENTERPRISE')||n.message.includes('SURGE'))createFlashEffect()}}}
+function updateRacePositions(){RACE_CONFIG.racers.forEach((r,i)=>{const a=document.getElementById(r.avatarId);if(a){const distance=progress[i]*9;a.style.left=`${50+distance}px`;if(progress[i]>=100&&!hasFinished[i]){hasFinished[i]=true;finishedRacers++;a.style.boxShadow='0 0 0 3px gold, 0 0 20px gold';if(finishedRacers===1){createExplosionEffect(950,parseInt(a.style.top));document.getElementById('commentary').textContent=`🏁 ${r.name} crosses first! 🥇`;}else if(finishedRacers===2){document.getElementById('commentary').textContent=`🥈 ${r.name} takes second place!`;}else if(finishedRacers===3){document.getElementById('commentary').textContent=`🥉 ${r.name} finishes third! Race complete!`;finishRace();}}}})}
+function calculateRaceProgress(elapsedTime) {
+    // Update active speed boosts
+    updateSpeedBoosts(elapsedTime);
+    
+    RACE_CONFIG.racers.forEach((r, i) => {
+        if (progress[i] < 100 && !hasFinished[i]) {
+            // Calculate current speed with multiplier
+            const currentSpeed = racerBaseSpeed * racerSpeedMultipliers[i];
+            
+            // Add small random variation for organic feel (±5%)
+            const variation = 0.95 + (Math.random() * 0.1);
+            const adjustedSpeed = currentSpeed * variation;
+            
+            // Apply progress
+            progress[i] = Math.min(progress[i] + adjustedSpeed, 100);
+            document.getElementById(r.progressId).style.width = `${progress[i]}%`;
+            
+            // Create visual effect when racer gets speed boost
+            if (racerSpeedMultipliers[i] > 1.5 && Math.random() < 0.3) {
+                const avatar = document.getElementById(r.avatarId);
+                if (avatar) {
+                    const rect = avatar.getBoundingClientRect();
+                    const trackRect = trackContainer.getBoundingClientRect();
+                    const x = rect.left - trackRect.left + 25;
+                    const y = rect.top - trackRect.top + 25;
+                    createEffect(x, y);
+                }
+            }
+        }
+    });
+    
+    updateRacePositions();
+    checkDramaticMoments(elapsedTime);
+    if (elapsedTime > 40 && elapsedTime % 12 == 0) createEffect(Math.random() * 900 + 50, Math.random() * 400 + 50);
+}
+
+function updateSpeedBoosts(elapsedTime) {
+    // Check for new speed boosts at this time
+    SPEED_BOOSTS.forEach(boost => {
+        if (Math.abs(elapsedTime - boost.time) < 0.5) { // Within half a second
+            // Add this boost to active boosts
+            activeBoosts.push({
+                racerIndex: boost.racerIndex,
+                multiplier: boost.multiplier,
+                endTime: elapsedTime + boost.duration
+            });
+            
+            // Apply the boost immediately
+            racerSpeedMultipliers[boost.racerIndex] = boost.multiplier;
+            
+            // Create visual effect for the boost
+            const avatar = document.getElementById(RACE_CONFIG.racers[boost.racerIndex].avatarId);
+            if (avatar) {
+                const rect = avatar.getBoundingClientRect();
+                const trackRect = trackContainer.getBoundingClientRect();
+                const x = rect.left - trackRect.left + 25;
+                const y = rect.top - trackRect.top + 25;
+                createFlashEffect();
+                createEffect(x, y);
+            }
+        }
+    });
+    
+    // Remove expired boosts and reset multipliers
+    const now = elapsedTime;
+    activeBoosts = activeBoosts.filter(boost => {
+        if (now >= boost.endTime) {
+            // This boost has expired
+            // Check if this racer has other active boosts
+            const otherBoosts = activeBoosts.filter(b => 
+                b.racerIndex === boost.racerIndex && b !== boost
+            );
+            
+            if (otherBoosts.length === 0) {
+                // No other boosts for this racer, reset to base multiplier
+                racerSpeedMultipliers[boost.racerIndex] = getBaseMultiplierForRacer(boost.racerIndex);
+            }
+            return false;
+        }
+        return true;
+    });
+    
+    // Ensure Josh Morley stays competitive with Lorand Tar
+    // If Josh is falling too far behind Lorand, give him a little extra
+    if (progress[5] < progress[0] - 10) { // If Josh is more than 10% behind Lorand
+        racerSpeedMultipliers[5] = Math.max(racerSpeedMultipliers[5], 1.5);
+    }
+}
+
+function getBaseMultiplierForRacer(racerIndex) {
+    // Base multipliers to ensure correct finishing order when no boosts are active
+    switch(racerIndex) {
+        case 2: return 1.15; // Marcel - highest
+        case 1: return 1.12; // zeshanshani - second
+        case 3: return 1.09; // Alex - third
+        case 0: return 1.07; // Lorand - fourth
+        case 5: return 1.05; // Josh - fifth (but close to Lorand)
+        case 4: return 1.03; // Nathan - sixth
+        case 6: return 1.00; // laszlo - seventh
+        default: return 1.0;
+    }
+}
+
+function checkDramaticMoments(elapsedTime){
+    if(commentaryIndex<RACE_COMMENTARY.length-1){
+        const n=RACE_COMMENTARY[commentaryIndex+1];
+        if(elapsedTime>=n.time){
+            commentaryIndex++;
+            document.getElementById('commentary').textContent=n.message;
+            if(n.message.includes('ENTERPRISE')||n.message.includes('SURGE')){
+                createFlashEffect();
+            }
+        }
+    }
+}
 function updateRaceTimer(){currentTime++;const d=currentTime+RACE_CONFIG.startDelay;const m=Math.floor(d/60),s=d%60;document.getElementById('raceTimer').textContent=`${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;if(currentTime>=RACE_CONFIG.startDelay)calculateRaceProgress(currentTime-RACE_CONFIG.startDelay)}
 function startRace(){if(raceActive)return;document.getElementById('startPopup').style.display='none';document.getElementById('raceContainer').style.display='block';raceActive=true;raceMusic.currentTime=0;raceMusic.play().catch(e=>console.log("Music ready"));raceInterval=setInterval(updateRaceTimer,500)}
-function finishRace(){clearInterval(raceInterval);raceActive=false;setTimeout(()=>{raceMusic.pause();},3000);RACE_CONFIG.racers.forEach((r,i)=>{if(i===2){document.getElementById(`progressBar${i+1}`).classList.add('winner-pulse');}});createExplosionEffect(950,225);createVictoryConfetti();setTimeout(()=>{document.getElementById('commentary').innerHTML="🏆 RACE COMPLETE! 🎉<br><small>All 7 competitors finished! Refresh to watch again.</small>"},1500)}
+function finishRace(){clearInterval(raceInterval);raceActive=false;setTimeout(()=>{raceMusic.pause();},3000);RACE_CONFIG.racers.forEach((r,i)=>{if(i===2){document.getElementById(`progressBar${i+1}`).classList.add('winner-pulse');}});createExplosionEffect(950,225);createVictoryConfetti();setTimeout(()=>{document.getElementById('commentary').innerHTML="🏆 TOP 3 FINISHED! 🎉<br><small>Marcel wins! zeshanshani second! Alex third!<br>Refresh to watch again.</small>"},1500)}
 function createEffect(x,y){const e=document.createElement('div');e.className='boost-effect';e.style.left=x+'px';e.style.top=y+'px';e.style.opacity='0.8';trackContainer.appendChild(e);e.animate([{transform:'scale(0.5)',opacity:0.8},{transform:'scale(1.8)',opacity:0}],{duration:600,easing:'ease-out'}).onfinish=()=>e.remove()}
 function createFlashEffect(){const f=document.createElement('div');f.className='flash-effect';trackContainer.appendChild(f);f.animate([{opacity:1},{opacity:0}],{duration:500}).onfinish=()=>f.remove()}
 function createExplosionEffect(x,y){const e=document.createElement('div');e.className='explosion';e.style.left=x+'px';e.style.top=y+'px';trackContainer.appendChild(e);e.animate([{transform:'scale(0)',opacity:1},{transform:'scale(2)',opacity:0}],{duration:800});setTimeout(()=>{const s=document.createElement('div');s.className='smoke';s.style.left=x+'px';s.style.top=y+'px';trackContainer.appendChild(s);s.animate([{transform:'scale(0.5) translateY(0)',opacity:0.7},{transform:'scale(1.5) translateY(-80px)',opacity:0}],{duration:2000}).onfinish=()=>s.remove()},200);setTimeout(()=>e.remove(),1000)}
-function createVictoryConfetti(){const s=['🎉','🏆','✨','💎','⭐','🚀','💪','🔥','⚡','👑'];for(let i=0;i<300;i++){setTimeout(()=>{const c=document.createElement('div');c.textContent=s[Math.floor(Math.random()*s.length)];c.style.position='fixed';c.style.fontSize=Math.random()*25+15+'px';c.style.left=Math.random()*100+'vw';c.style.top='-50px';c.style.opacity='0.9';c.style.zIndex='9999';c.style.pointerEvents='none';document.body.appendChild(c);c.animate([{transform:`translate(0,0) rotate(0deg)`,opacity:1},{transform:`translate(${Math.random()*200-100}px,${window.innerHeight+100}px) rotate(${Math.random()*720}deg)`,opacity:0}],{duration:Math.random()*3000+1500,easing:'cubic-bezier(0.215,0.61,0.355,1)'}).onfinish=()=>c.remove()},i*10)}}
+function createVictoryConfetti(){const s=['🎉','🏆','✨','💎','⭐','🚀','💪','🔥','⚡','👑'];for(let i=0;i<150;i++){setTimeout(()=>{const c=document.createElement('div');c.textContent=s[Math.floor(Math.random()*s.length)];c.style.position='fixed';c.style.fontSize=Math.random()*25+15+'px';c.style.left=Math.random()*100+'vw';c.style.top='-50px';c.style.opacity='0.9';c.style.zIndex='9999';c.style.pointerEvents='none';document.body.appendChild(c);c.animate([{transform:`translate(0,0) rotate(0deg)`,opacity:1},{transform:`translate(${Math.random()*200-100}px,${window.innerHeight+100}px) rotate(${Math.random()*720}deg)`,opacity:0}],{duration:Math.random()*3000+1500,easing:'cubic-bezier(0.215,0.61,0.355,1)'}).onfinish=()=>c.remove()},i*10)}}
 function lightenColor(c,p){const n=parseInt(c.replace("#",""),16),a=Math.round(2.55*p),R=(n>>16)+a,G=(n>>8&0x00FF)+a,B=(n&0x0000FF)+a;return"#"+ (0x1000000+(R<255?R<1?0:R:255)*0x10000+(G<255?G<1?0:G:255)*0x100+(B<255?B<1?0:B:255)).toString(16).slice(1)}
 window.addEventListener('resize',()=>{if(!raceActive)updateRacePositions()});
 </script></body></html>
