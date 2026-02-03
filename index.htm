@@ -40,17 +40,17 @@ let racerSpeedMultipliers = Array(RACE_CONFIG.racers.length).fill(1.0);
 // Define which racer gets speed boosts at which commentary times
 // UPDATED: Josh Morley gets stronger/longer boost to stay right behind Lorand Tar
 const SPEED_BOOSTS = [
-    { time: 12, racerIndex: 0, multiplier: 1.8, duration: 8 },  // Lorand Tar early lead
+    { time: 12, racerIndex: 0, multiplier: 1.9, duration: 11 },  // Lorand Tar early lead
     { time: 20, racerIndex: 1, multiplier: 2.0, duration: 10 }, // zeshanshani volume power
     { time: 30, racerIndex: 2, multiplier: 2.2, duration: 15 }, // Marcel enterprise momentum
     { time: 42, racerIndex: 3, multiplier: 1.9, duration: 12 }, // Alex Smirnov multiple wins
     { time: 55, racerIndex: 4, multiplier: 1.7, duration: 8 },  // Nathan Roberts big moves
-    { time: 68, racerIndex: 5, multiplier: 2.0, duration: 15 }, // Josh Morley - STRONGER BOOST to stay with Lorand
+    { time: 68, racerIndex: 5, multiplier: 1.9, duration: 15 }, // Josh Morley - STRONGER BOOST to stay with Lorand
     { time: 82, racerIndex: 6, multiplier: 1.6, duration: 8 },  // laszlo.kosa rhythm
     { time: 108, racerIndex: 2, multiplier: 2.5, duration: 10 }, // Marcel final surge
     { time: 115, racerIndex: 1, multiplier: 2.3, duration: 8 },  // zeshanshani final push
     { time: 125, racerIndex: 3, multiplier: 2.1, duration: 8 },  // Alex final push
-    { time: 125, racerIndex: 5, multiplier: 1.8, duration: 10 }, // Josh Morley final push
+    { time: 125, racerIndex: 5, multiplier: 1.5, duration: 10 }, // Josh Morley final push
 ];
 
 // Track active speed boosts
